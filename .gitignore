@@ -4,3 +4,6 @@
 /src/app/logs/*
 /src/vendor/
 /src/app/config/parameters.yml
+/src/.buildpath
+/src/.project
+/src/.settings
