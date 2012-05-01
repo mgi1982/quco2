@@ -39,7 +39,7 @@ class metricsActions extends sfActions
 	public function executeIndex(sfWebRequest $request)
 	{
 		$current = SitePeer::getCurrent();
-		if($current->getDescription() === '') {
+		if(trim($current->getDescription()) == '') {
 			$this->form = new SiteForm($current);
 			if($request->getMethod() == sfRequest::POST) {
 				$this->form->bind(
