@@ -4,3 +4,7 @@ TODO
 1. Implement Metric dynamic form
 2. Implement Metrics routing
 3. Implement javascript embeder
+4. Full Metrics view as user
+5. CRUD For system Users for admins
+6. CRUD for Metrics for admins
+7. View full metrics for a user/site for the admin
