@@ -17,7 +17,18 @@ class metricsActions extends sfActions
 			$this->getUser()->setAttribute('url', $request->getParameter('url'));
 		} elseif(!$this->getUser()->hasAttribute('url')) {
 			$this->getUser()->setAttribute('url', sfConfig::get('app_default_url'));
-		} 
+		}
+		$purl = parse_url($this->getUser()->getAttribute('url'));
+		if($purl && !isset($purl['scheme'])) {
+			if(isset($purl['host'])) {
+				$url = 'http://' . $purl['host'];
+			} else if(isset($purl['path'])) {
+				$url = 'http://' . $purl['path'];
+			} else {
+				$url = 'http://' . $this->getUser()->getAttribute('url');
+			}
+			$this->getUser()->setAttribute('url', $url);
+		}
 	}
 
 	/**
@@ -27,5 +38,20 @@ class metricsActions extends sfActions
 	 */
 	public function executeIndex(sfWebRequest $request)
 	{
+		$current = SitePeer::getCurrent();
+		if($current->getDescription() === '') {
+			$this->form = new SiteForm($current);
+			if($request->getMethod() == sfRequest::POST) {
+				$this->form->bind(
+						$request->getParameter($this->form->getName()),
+						$request->getFiles($this->form->getName())
+				);
+				if ($this->form->isValid())
+				{
+					$this->form->save();
+					unset($this->form);
+				}
+			}
+		}
 	}
 }

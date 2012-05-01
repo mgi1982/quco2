@@ -18,5 +18,16 @@
  * @package    propel.generator.lib.model
  */
 class SitePeer extends BaseSitePeer {
+	static public function getCurrent() {
+		$user = sfContext::getInstance()->getUser();
+		$site = SiteQuery::create()
+			->findOneByUrl($user->getAttribute('url'));
+		if(empty($site)) {
+			$site = new Site();
+			$site->setUrl($user->getAttribute('url'));
+			$site->save();
+		}
+		return $site;
+	}
 
 } // SitePeer

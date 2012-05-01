@@ -11,5 +11,6 @@ class SiteForm extends BaseSiteForm
 {
   public function configure()
   {
+  	$this->useFields(array('url', 'description'));
   }
 }
