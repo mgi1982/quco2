@@ -2,9 +2,8 @@ Repo for the QuCo2 project.
 
 TODO
 1. Implement Metric dynamic form
-2. Implement Metrics routing
-3. Implement javascript embeder
-4. Full Metrics view as user
-5. CRUD For system Users for admins
-6. CRUD for Metrics for admins
-7. View full metrics for a user/site for the admin
+2. Implement javascript embeder
+3. Full Metrics view as user
+4. CRUD For system Users for admins
+5. CRUD for Metrics for admins
+6. View full metrics for a user/site for the admin

@@ -54,4 +54,33 @@ class metricsActions extends sfActions
 			}
 		}
 	}
+	
+	public function executeLoad(sfWebRequest $request)
+	{
+		$metric_id = $request->getParameter('id');
+		$this->metric = MetricQuery::create()
+			->findOneById($metric_id);
+		if(empty($this->metric)) {
+			$metric = MetricPeer::getFirst();
+			$this->redirect('@metric_load?id=' . $metric->getId());
+		}
+		$this->form = new MetricDynamicForm();
+		/*
+		$current = SitePeer::getCurrent();
+		if(trim($current->getDescription()) == '') {
+			$this->form = new SiteForm($current);
+			if($request->getMethod() == sfRequest::POST) {
+				$this->form->bind(
+						$request->getParameter($this->form->getName()),
+						$request->getFiles($this->form->getName())
+				);
+				if ($this->form->isValid())
+				{
+					$this->form->save();
+					unset($this->form);
+				}
+			}
+		}*/
+	}
+	
 }

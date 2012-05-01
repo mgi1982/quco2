@@ -18,5 +18,8 @@
  * @package    propel.generator.lib.model
  */
 class MetricPeer extends BaseMetricPeer {
-
+	static public function getFirst() {
+		return MetricQuery::create()
+			->findOne();
+	}
 } // MetricPeer

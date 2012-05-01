@@ -1,4 +1,7 @@
 <?php use_helper('I18N'); ?>
+<?php
+$route = $sf_context->getRouting()->getCurrentInternalUri(true);
+?>
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container-fluid">
@@ -18,7 +21,7 @@
       <div class="nav-collapse">
         <ul class="nav">
         <?php foreach(MetricQuery::create()->find() as $metric): ?>
-          <li><?php echo link_to($metric->getName(), '/')?></li>
+          <li<?php echo (('@metric_load?id=' . $metric->getId()) == $route)? ' class="active"' : ''?>><?php echo link_to($metric->getName(), '@metric_load?id=' . $metric->getId())?></li>
         <?php endforeach;?>
         </ul>
       </div>
