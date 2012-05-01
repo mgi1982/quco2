@@ -1,0 +1,7 @@
+parameters:
+#    quco2_metrics.example.class: Quco2\Bundle\MetricsBundle\Example
+
+services:
+#    quco2_metrics.example:
+#        class: %quco2_metrics.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

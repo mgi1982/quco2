@@ -61,3 +61,13 @@
     git=http://github.com/symfony/AsseticBundle.git
     target=/bundles/Symfony/Bundle/AsseticBundle
     version=v1.0.1
+
+[TwitterBootstrap2]
+    git=git://github.com/twitter/bootstrap.git
+    target=/twitter/bootstrap/v2/
+    version=v2.0.0
+
+[MopaBootstrapBundle]
+    git=https://github.com/phiamo/MopaBootstrapBundle.git
+    target=/bundles/Mopa/Bundle/BootstrapBundle/
+    version=master

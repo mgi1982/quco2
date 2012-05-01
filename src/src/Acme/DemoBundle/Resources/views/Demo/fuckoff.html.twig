@@ -1,0 +1,15 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block title "Fuck off " ~ mate %}
+
+{% block content %}
+    <h1>Clearly you can't read {{ mate }}, I said piss off!</h1>
+    <h2>{{ insult }}</h2>
+    <ul>
+    	{% for current in iterate %}
+    		<li>{{ current }}</li>
+    	{% endfor %}
+    </ul>
+{% endblock %}
+
+{% set code = code(_self) %}

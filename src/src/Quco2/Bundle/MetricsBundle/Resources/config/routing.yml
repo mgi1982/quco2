@@ -1,0 +1,3 @@
+Quco2MetricsBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: Quco2MetricsBundle:Default:index }

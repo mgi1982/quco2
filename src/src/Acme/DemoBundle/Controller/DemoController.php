@@ -27,7 +27,22 @@ class DemoController extends Controller
      */
     public function helloAction($name)
     {
+    	$this->getRequest()->getSession()->setFlash('marcos', 'Rulezzz');
         return array('name' => $name);
+    }
+    
+    /**
+     * @Route("/fuckoff/{mate}.{_format}/{insult}", defaults={"insult" = "Standart Insult", "_format"="html"}, requirements={"_format"="xml|html|json"}, name="_demo_fuckoff")
+     * @Template()
+     */
+    public function fuckoffAction($mate, $insult)
+    {
+    	/*return $this->render('AcmeDemoBundle:Demo:hello.html.twig', array(
+			'mate' => $mate,
+    		'insult' => $insult,
+    	));*/
+    	//return $this->forward('AcmeDemoBundle:Demo:Hello', array('name' => 'Marcos'));
+    	return array('mate' => $mate, 'insult' => $insult, 'iterate' => range(1, 30, 2));
     }
 
     /**
