@@ -499,3 +499,17 @@ Apr 30 19:32:38 symfony [info] {sfWebDebugLogger} Factories 9.68 ms (1)
 Apr 30 19:32:38 symfony [info] {sfWebDebugLogger} Action "metrics/index" 0.31 ms (1)
 Apr 30 19:32:38 symfony [info] {sfWebDebugLogger} View "Success" for "metrics/index" 26.10 ms (1)
 Apr 30 19:32:38 symfony [info] {sfWebResponse} Send content (27990 o)
+Apr 30 20:00:31 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'metrics',  'action' => 'index',)
+Apr 30 20:00:31 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Apr 30 20:00:31 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Apr 30 20:00:31 symfony [info] {metricsActions} Call "metricsActions->executeIndex()"
+Apr 30 20:00:31 symfony [info] {sfPHPView} Render "/usr/htdocs/quco2/src/apps/frontend/modules/metrics/templates/indexSuccess.php"
+Apr 30 20:00:31 symfony [info] {sfPHPView} Decorate content with "/usr/htdocs/quco2/src/apps/frontend/templates/layout.php"
+Apr 30 20:00:31 symfony [info] {sfPHPView} Render "/usr/htdocs/quco2/src/apps/frontend/templates/layout.php"
+Apr 30 20:00:31 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Apr 30 20:00:31 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Apr 30 20:00:31 symfony [info] {sfWebDebugLogger} Configuration 36.80 ms (10)
+Apr 30 20:00:31 symfony [info] {sfWebDebugLogger} Factories 17.77 ms (1)
+Apr 30 20:00:31 symfony [info] {sfWebDebugLogger} Action "metrics/index" 0.25 ms (1)
+Apr 30 20:00:31 symfony [info] {sfWebDebugLogger} View "Success" for "metrics/index" 36.08 ms (1)
+Apr 30 20:00:31 symfony [info] {sfWebResponse} Send content (28690 o)
