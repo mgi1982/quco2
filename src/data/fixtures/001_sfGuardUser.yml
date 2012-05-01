@@ -1,0 +1,11 @@
+sfGuardUser:
+  admin:
+    username: admin
+    password: admin123
+    is_super_admin: true
+  sf_guard_1:
+    username: usuario
+    password: usuario123
+  sf_guard_2:
+    username: usuario2
+    password: 2usuarios

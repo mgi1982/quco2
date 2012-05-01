@@ -1,0 +1,14 @@
+Metric:
+  usabilidad:
+    description:  |
+      Se considera la evaluación de la USABILIDAD porque todo sitio Web debe ser un producto 
+      atractivo, entendible y fácil de utilizar para los usuarios del mismo, con dificultad de uso mínima.
+  confiabilidad:
+    description:  |
+      Se considera la evaluación de la métrica de CONFIABILIDAD porque representa un conjunto de
+      atributes que se relacionan con la capacidad de mantener su nivel de performance bajo
+      las condiciones establecidas por un período de tiempo.
+  funcionalidad:
+    description:  |
+      Se considera la evaluación de FUNCIONALIDAD para comprobar la relación entre las
+      funciones de la aplicación, los resultados esperados y los resultados reales.
