@@ -27,6 +27,7 @@ DROP TABLE IF EXISTS `metric`;
 CREATE TABLE `metric`
 (
 	`id` INTEGER NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(255) NOT NULL,
 	`description` TEXT NOT NULL,
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
@@ -41,6 +42,7 @@ CREATE TABLE `ecriteria`
 (
 	`id` INTEGER NOT NULL AUTO_INCREMENT,
 	`metric_id` INTEGER NOT NULL,
+	`name` VARCHAR(255) NOT NULL,
 	`description` TEXT NOT NULL,
 	`form_field` TEXT NOT NULL,
 	PRIMARY KEY (`id`,`metric_id`),

@@ -6,11 +6,13 @@ propel:
 
   metric:
     id:
+    name:         { type: varchar(255), required: true }
     description:  { type: longvarchar, required: true } 
 
   ecriteria:
     id:
     metric_id:    { type: integer, primaryKey: true, foreignReference: id, foreignTable: metric, onDelete: CASCADE }
+    name:         { type: varchar(255), required: true }
     description:  { type: longvarchar, required: true }
     form_field:   { type: longvarchar, required: true }
     

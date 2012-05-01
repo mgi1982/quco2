@@ -1,24 +1,220 @@
-# # Populate this file with data to be loaded by your ORM's *:data-load task.
-# # You can create multiple files in this directory (i.e. 010_users.yml,
-# # 020_articles.yml, etc) which will be loaded in alphabetical order.
-# # 
-# # See documentation for your ORM's *:data-load task for more information.
-# 
-# User:
-#   fabien:
-#     username: fabien
-#     password: changeme
-#     name:     Fabien Potencier
-#     email:    fabien.potencier@symfony-project.com
-#   kris:
-#     username: Kris.Wallsmith
-#     password: changeme
-#     name:     Kris Wallsmith
-#     email:    kris.wallsmith@symfony-project.com
 Ecriteria:
-  escala_de_valores:
-    Metric: usabilidad
+  facilidad_aprendizaje:
+    metric_id: usabilidad
+    name: Facilidad de Aprendizaje
     description: |
-      sdfsdfdsfsdf
+      Principio que hace referencia a la necesidad de minimizar el
+      tiempo necesario que se require desde el no conocimiento de una aplicacion a su uso
+      productivo.
     form_field: |
-      fdasdfasd
+      { 
+        "values" : {
+          "-2" : "Muy Complicado",
+          "-1" : "Complicado",
+          "1"  : "Fácil",
+          "2"  : "Muy Fácil"
+        },
+        "type" : "expanded-list"
+      }
+  consistencia:
+    metric_id: usabilidad
+    name: Consistencia
+    description: |
+      Un sistema es consistente si todos los mecanismos que se utilizan son siempre 
+      usados de la misma manera, siempre que se utilicen y sea cual sea el momento en el que se haga.
+    form_field: |
+      { 
+        "values" : {
+          "3" : "Consistencia en todo el Sitio",
+          "2" : "La mayor parte del Sitio presenta Consistencia",
+          "1"  : "Inconsistencia en todo el Sitio"
+        },
+        "type" : "expanded-list",
+        "label" : "Indique grado de Consistencia en el Sitio"
+      }
+  recuperabilidad:
+    metric_id: usabilidad
+    name: Recuperabilidad
+    description: |
+      Grado de facilidad que una aplicacion permite al usuario para corregir una
+      acción una vez que está reconocido un error.
+    form_field: |
+      { 
+        "values" : {
+          "1" : "SI",
+          "-1"  : "NO"
+        },
+        "type" : "radio",
+        "label" : "El Sitio permite volver atrás acciones erróneas"
+      }
+  retencion:
+    metric_id: usabilidad
+    name: Retención en el Tiempo
+    description: |
+      Que el usuario recuerde fácilmente cómo se utilizaba el sistema si
+      deja de emplearlo por un tiempo
+    form_field: |
+      { 
+        "values" : {
+          "-2" : "Muy Complicado",
+          "-1" : "Complicado",
+          "1" : "Fácil",
+          "2"  : "Muy Fácil"
+        },
+        "type" : "expanded-list"
+      }
+  flexibilidad:
+    metric_id: usabilidad
+    name: Fexibilidad
+    description: |
+      Posibilidades de intercambio de información entre el usuario y el sistema
+      (posibilidad de diálogo, varias vías para realizar una tarea, etc)
+    form_field: |
+      { 
+        "values" : {
+          "3" : "El Sitio presenta diferentes opciones para una misma tarea",
+          "2" : "El Sitio prsenta una única alternativa para una tarea, pero no presenta inconvenientes para llegar hasta allí.",
+          "1"  : "Es difícil intercambiar información dentro del Sitio",
+          "-1"  : "No se puede intercambiar información en el Sitio"
+        },
+        "type" : "expanded-list"
+      }
+  freq_fallas:
+    metric_id: confiabilidad
+    name: Frecuencia y severidad de las fallas
+    description: |
+      Se debe evaluar cada cuánto tiempo ocurren fallas en
+      el Sistema (si es que ocurren) y la habilidad del Software para mantener el nivel
+      especificado de performance.
+    form_field: |
+      { 
+        "values" : {
+          "-2" : "Errores graves continuamente",
+          "-1" : "Errores leves continuamente",
+          "1"  : "Errores leves sólo en ciertas funciones",
+          "2"  : "No se observan errores"
+        },
+        "type" : "expanded-list"
+      }
+  exactitud:
+    metric_id: confiabilidad
+    name: Exactitud de las salidas
+    description: |
+      Medida que indica la aproximación de la salida obtenida respecto
+      de la salida lograda por el Software
+    form_field: |
+      { 
+        "values" : {
+          "-1" : "NO",
+          "1"  : "SI"
+        },
+        "type" : "radio",
+        "label" : "El Sitio proporciona salidas correctas de acuerdo a la información ingresada."
+      }
+  recuperacion_fallas:
+    metric_id: confiabilidad
+    name: Capacidad de Recuperación ante fallas
+    description: |
+      Esta función incluye procesos requeridos para
+      detectar y recuperarse de situaciones anormales, tales como pérdida de respuesta, secuencias
+      inválidas, enlaces cortados, entre otros. Se debe prever un mínimo tiempo de expiración,
+      tras el cual se debe solicitar una nueva respuesta.
+    form_field: |
+      { 
+        "values" : {
+          "1" : "SI",
+          "-1"  : "NO"
+        },
+        "type" : "radio",
+        "label" : "El Sitio ante una falla, se recupera rápidamente y solicita nuevamente información al usuario."
+      }
+  conf_confiabilidad:
+    metric_id: confiabilidad
+    name: Confiabilidad
+    description: |
+      No ocurrencia de accesos no autorizados a información privada.
+    form_field: |
+      { 
+        "values" : {
+          "1" : "SI",
+          "-1"  : "NO"
+        },
+        "type" : "radio",
+        "label" : "El Sitio ofrece seguridad respecto de Informacion confidencial proporcionada."
+      }
+  adecuacion:
+    metric_id: funcionalidad
+    name: Adecuación
+    description: |
+      Se debe evaluar si es que ocurren fallas en el Sistema y la habilidad del
+      Software para mantener el nivel especificado de performance.
+    form_field: |
+      { 
+        "values" : {
+          "-1" : "NO",
+          "1"  : "SI"
+        },
+        "type" : "radio",
+        "label" : "Ocurren fallas"
+      }
+  adecuacion_minutos:
+    metric_id: funcionalidad
+    name: Adecuación (Tiempo en Minutos)
+    description: |
+      Se debe evaluar cada cuánto tiempo ocurren fallas en el Sistema (si es que
+      ocurren) y la habilidad del Software para mantener el nivel especificado de performance.
+    form_field: |
+      { 
+        "type" : "input",
+        "default" : "0",
+        "label" : "Indique cada cuánto tiempo se observan fallas"
+      }
+  seguridad_func:
+    metric_id: funcionalidad
+    name: Seguridad
+    description: |
+      Medida que indica la aproximación de la salida obtenida respecto de la salida
+      lograda por el software
+    form_field: |
+      { 
+        "values" : {
+          "3" : "El Sitio es completamente seguro",
+          "2" : "El Sitio es muy seguro",
+          "1"  : "El Sitio es seguro",
+          "-1"  : "Se observan zonas inseguras",
+          "-2"  : "El Sitio es completamente inseguro"
+        },
+        "type" : "expanded-list",
+        "label" : "Indique el nivel de Seguridad del Sitio."
+      }
+  cumplimiento_funcionalidad:
+    metric_id: funcionalidad
+    name: Cumplimiento
+    description: |
+      Esta función incluye procesos requridos para detectar y recuperarse de
+      situaciones anormales, tales como pérdida de respuesta, secuencias inválidas, 
+      enlaces cortados, entre otros. Se debe prever un mínimo tiempo de expiración, tras 
+      el cual se debe solicitar nueva respuesta.
+    form_field: |
+      { 
+        "values" : {
+          "1" : "SI",
+          "-1"  : "NO"
+        },
+        "type" : "radio",
+        "label" : "El Sitio se recupera frente a fallas imprevistas"
+      }
+  confiabilidad_funcionalidad:
+    metric_id: funcionalidad
+    name: Confiabilidad
+    description: |
+      No ocurrencia de accesos no autorizados a información privada.
+    form_field: |
+      { 
+        "values" : {
+          "1" : "SI",
+          "-1"  : "NO"
+        },
+        "type" : "radio",
+        "label" : "El sitio prevee identificación de Usuarios."
+      }      
