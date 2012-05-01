@@ -1,0 +1,23 @@
+propel:
+  site:
+    id:
+    url :         { type: varchar(255), required: true, index: unique }
+    description:  { type: longvarchar, required: true }
+
+  metric:
+    id:
+    description:  { type: longvarchar, required: true } 
+
+  ecriteria:
+    id:
+    metric_id:    { type: integer, primaryKey: true, foreignReference: id, foreignTable: metric, onDelete: CASCADE }
+    description:  { type: longvarchar, required: true }
+    form_field:   { type: longvarchar, required: true }
+    
+  evaluation:
+    site_id:      { type: integer, primaryKey: true, foreignReference: id, foreignTable: site, onDelete: CASCADE }
+    ecriteria_id: { type: integer, primaryKey: true, foreignReference: id, foreignTable: ecriteria, onDelete: CASCADE }
+    metric_id:    { type: integer, primaryKey: true, foreignReference: id, foreignTable: metric, onDelete: CASCADE }
+    value:        { type: integer }
+    created_at:   ~
+    updated_at:   ~

@@ -1,0 +1,30 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/07-Databases
+
+dev:
+  propel:
+    param:
+      classname:  DebugPDO
+      dsn:        mysql:dbname=quco_dev;host=localhost
+      username:   quco_dev
+      password:   dev_quco
+      debug:
+        realmemoryusage: true
+        details:
+          time:       { enabled: true }
+          slow:       { enabled: true, threshold: 0.1 }
+          mem:        { enabled: true }
+          mempeak:    { enabled: true }
+          memdelta:   { enabled: true }
+
+all:
+  propel:
+    class:        sfPropelDatabase
+    param:
+      classname:  PropelPDO
+      dsn:        mysql:dbname=quco_dev;host=localhost
+      username:   quco_dev
+      password:   dev_quco
+      encoding:   utf8
+      persistent: true
+      pooling:    true
