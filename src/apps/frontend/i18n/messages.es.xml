@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+    <file source-language="en" target-language="es" datatype="plaintext" original="messages" date="2010-07-19T17:38:41Z" product-name="messages">
+        <header/>
+        <body>
+            <trans-unit id="1">
+                <source>less than 5 seconds</source>
+                <target>menos de 5 segundos</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>less than 10 seconds</source>
+                <target>menos de 10 segundos</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>less than 20 seconds</source>
+                <target>menos de 20 segundos</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>half a minute</source>
+                <target>medio minuto</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>less than a minute</source>
+                <target>Menos de un Minuto</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>1 minute</source>
+                <target>1 minuto</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>%minutes% minutes</source>
+                <target>%minutes% minutos</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>about 1 hour</source>
+                <target>Cerca de una Hora</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>about %hours% hours</source>
+                <target>cerca de %hours% horas</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>1 day</source>
+                <target>1 dia</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>%days% days</source>
+                <target>%days% dias</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>about 1 month</source>
+                <target>cerca de 1 mes</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>%months% months</source>
+                <target>%months% meses</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>about 1 year</source>
+                <target>Cerca de 1 año</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>over %years% years</source>
+                <target>mas de %years% años</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>is empty</source>
+                <target>esta vacío</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>from</source>
+                <target>desde</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>to</source>
+                <target>hasta</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>Back to list</source>
+                <target>Volver al listado</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>Required.</source>
+                <target>Obligatorio.</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>Filters</source>
+                <target>Filtros</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>Username</source>
+                <target>Usuario</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>Password</source>
+                <target>Contraseña</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>Permissions and groups</source>
+                <target>Permisos</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>Remember</source>
+                <target>Recordar</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>The username and/or password is invalid.</source>
+                <target>El usuario y/o contraseña ingresados son invalidos.</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>Add new</source>
+                <target>Agregar nuevo</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>Password again</source>
+                <target>Confirmar contraseña</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>is active</source>
+                <target>Esta habilitado?</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>Permissions</source>
+                <target>Permisos</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>Are you sure?</source>
+                <target>Esta seguro?</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>"%value%" is not an integer.</source>
+                <target>"%value%" tiene que ser un numero entero.</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>Logout</source>
+                <target>Cerrar Sesión.</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>sign in</source>
+                <target>Iniciar Sesión</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
