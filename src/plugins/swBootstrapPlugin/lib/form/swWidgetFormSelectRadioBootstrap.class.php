@@ -28,7 +28,7 @@ class swWidgetFormSelectRadioBootstrap extends sfWidgetFormSelectRadio
 
       $inputs[$id] = array(
         'input' => $this->renderTag('input', array_merge($baseAttributes, $attributes)),
-        'label' => $this->renderContentTag('span', $option, array('for' => $id)),
+        'label' => $option,
       );
     }
     return call_user_func($this->getOption('formatter'), $this, $inputs);
@@ -39,9 +39,9 @@ class swWidgetFormSelectRadioBootstrap extends sfWidgetFormSelectRadio
     $rows = array();
     foreach ($inputs as $input)
     {
-      $rows[] = $this->renderContentTag('li', $this->renderContentTag('label', $input['input'].$this->getOption('label_separator').$input['label']));
+      $rows[] = $this->renderContentTag('label', $input['input'].$this->getOption('label_separator').$input['label'], array('class' => $this->getOption('class')));
     }
 
-    return !$rows ? '' : $this->renderContentTag('ul', implode($this->getOption('separator'), $rows), array('class' => $this->getOption('class')));
+    return !$rows ? '' : implode('', $rows);
   }
 }

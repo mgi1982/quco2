@@ -65,22 +65,18 @@ class metricsActions extends sfActions
 			$this->redirect('@metric_load?id=' . $metric->getId());
 		}
 		$this->form = new MetricDynamicForm();
-		/*
-		$current = SitePeer::getCurrent();
-		if(trim($current->getDescription()) == '') {
-			$this->form = new SiteForm($current);
-			if($request->getMethod() == sfRequest::POST) {
-				$this->form->bind(
-						$request->getParameter($this->form->getName()),
-						$request->getFiles($this->form->getName())
-				);
-				if ($this->form->isValid())
-				{
-					$this->form->save();
-					unset($this->form);
-				}
+		$this->form->setMetric($this->metric);
+		if($request->getMethod() == sfRequest::POST) {
+			$this->form->bind(
+				$request->getParameter($this->form->getName()),
+				$request->getFiles($this->form->getName())
+			);
+			if ($this->form->isValid())
+			{
+				$this->form->save();
+				unset($this->form);
 			}
-		}*/
+		}
 	}
 	
 }

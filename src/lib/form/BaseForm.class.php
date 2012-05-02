@@ -10,4 +10,9 @@
  */
 class BaseForm extends sfFormSymfony
 {
+	public function setup() {
+		$bootstrap_formatter = new swWidgetFormSchemaFormatterBootstrap($this->getWidgetSchema());
+		$this->getWidgetSchema()->addFormFormatter('bootstrap', $bootstrap_formatter);
+		$this->getWidgetSchema()->setFormFormatterName('bootstrap');
+	}
 }

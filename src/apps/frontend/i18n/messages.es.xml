@@ -129,8 +129,8 @@
                 <target>Esta seguro?</target>
             </trans-unit>
             <trans-unit id="32">
-                <source>"%value%" is not an integer.</source>
-                <target>"%value%" tiene que ser un numero entero.</target>
+                <source> is not an integer.</source>
+                <target> tiene que ser un numero entero.</target>
             </trans-unit>
             <trans-unit id="33">
                 <source>Logout</source>
