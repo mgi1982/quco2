@@ -6,4 +6,5 @@ i.style.top = 0;
 i.style.right = 0;
 i.style.position = 'fixed';
 i.style.overflow = 'hidden';
+i.style.zIndex = 1000;
 document.body.appendChild(i); 
