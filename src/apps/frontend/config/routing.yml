@@ -41,7 +41,7 @@ sf_guard_password:
   param: { module: sfGuardAuth, action: password }
   
 metric_load:
-  url:   /metric/:id
+  url:   /metrics/:id
   param: { module: metrics, action: load, id: null }
 
 # default rules

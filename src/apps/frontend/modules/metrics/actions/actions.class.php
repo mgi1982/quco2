@@ -50,8 +50,11 @@ class metricsActions extends sfActions
 				{
 					$this->form->save();
 					unset($this->form);
+					$this->redirect('@metric_load');
 				}
 			}
+		} else {
+			$this->redirect('@metric_load');
 		}
 	}
 	
