@@ -18,5 +18,17 @@
  * @package    propel.generator.lib.model
  */
 class EvaluationPeer extends BaseEvaluationPeer {
-
+	static public function getInstance(Ecriteria $ecriteria) {
+		$site = SiteQuery::create()
+			->findOneByUrl(sfContext::getInstance()->getUser()->getAttribute('url'));
+		$ret = self::retrieveByPk($site->getId(), $ecriteria->getId(), $ecriteria->getMetricId());
+		if(empty($ret)) {
+			$ret = new Evaluation();
+			$ret->setSite($site);
+			$ret->setEcriteria($ecriteria);
+			$ret->setMetric($ecriteria->getMetric());
+			$ret->save();
+		}
+		return $ret;
+	}
 } // EvaluationPeer

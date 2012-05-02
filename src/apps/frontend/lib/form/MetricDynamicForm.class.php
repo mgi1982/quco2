@@ -9,8 +9,10 @@ class MetricDynamicForm extends BaseForm {
 	}
 	
 	public function setMetric(Metric $metric) {
+		$this->metric = $metric;
 		sfContext::getInstance()->getConfiguration()->loadHelpers("I18N");
 		foreach($metric->getEcriterias() as $ecriteria) {
+			$dbfield = EvaluationPeer::getInstance($ecriteria);
 			/* @var $ecriteria Ecriteria */
 			$conf = json_decode($ecriteria->getFormField(), true);
 			$field_name = $ecriteria->getName();
@@ -57,6 +59,19 @@ class MetricDynamicForm extends BaseForm {
 					));
 					break;
 			}
+			if(null !== $dbfield->getValue()) {
+				$this->widgetSchema[$field_name]->setDefault($dbfield->getValue());
+			}
+		}
+		$this->widgetSchema->setNameFormat('metric_dynamic[%s]');	
+	}
+	
+	public function save() {
+		foreach($this->metric->getEcriterias() as $ecriteria) {
+			$dbfield = EvaluationPeer::getInstance($ecriteria);
+			$field_name = $ecriteria->getName();
+			$dbfield->setValue($this->getValue($field_name));
+			$dbfield->save();
 		}
 		$this->widgetSchema->setNameFormat('metric_dynamic[%s]');	
 	}

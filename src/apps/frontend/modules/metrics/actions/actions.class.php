@@ -74,7 +74,6 @@ class metricsActions extends sfActions
 			if ($this->form->isValid())
 			{
 				$this->form->save();
-				unset($this->form);
 			}
 		}
 	}
