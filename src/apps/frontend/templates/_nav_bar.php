@@ -8,7 +8,7 @@ $route = $sf_context->getRouting()->getCurrentInternalUri(true);
       <a class="btn btn-navbar" data-toggle="collapse"
         data-target=".nav-collapse"> <span class="icon-bar"></span> <span
         class="icon-bar"></span> <span class="icon-bar"></span>
-      </a> <a class="brand" href="#">Quco2</a>
+      </a> <a class="brand" href="javascript:(function(){<?php include_partial('global/bookmarklet')?>})();">Quco2</a>
       <?php if($sf_user->isAuthenticated()): ?>
       <div class="btn-group pull-right">
         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
