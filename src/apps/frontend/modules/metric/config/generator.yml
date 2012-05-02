@@ -1,0 +1,35 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Metric
+    theme:                 admin15
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Metric
+    plural:                Metrics
+    route_prefix:          metric
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        name:              { label: 'Nombre' }
+        description:       { label: 'Descripcion' }
+      list:    
+        title:             'Listado de Metricas'
+      filter:  
+        display:
+          - name
+          - description
+      form:    
+        display:
+          - name
+          - description
+        actions:
+          _list:        { label: 'Volver al listado' }
+          _save:
+      edit:    
+        title:             'Editar la metrica %%name%% (id: %%id%%)'
+      new:     
+        title:             'Crear Nueva Metrica'

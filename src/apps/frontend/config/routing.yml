@@ -1,3 +1,30 @@
+ecriteria:
+  class: sfPropelORMRouteCollection
+  options:
+    model:                Ecriteria
+    module:               ecriteria
+    prefix_path:          /ecriteria
+    column:               id
+    with_wildcard_routes: true
+
+sf_guard_user:
+  class: sfPropelORMRouteCollection
+  options:
+    model:                sfGuardUser
+    module:               sf_guard_user
+    prefix_path:          /sf_guard_user
+    column:               id
+    with_wildcard_routes: true
+
+metric:
+  class: sfPropelORMRouteCollection
+  options:
+    model:                Metric
+    module:               metric
+    prefix_path:          /metric
+    column:               id
+    with_wildcard_routes: true
+
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 

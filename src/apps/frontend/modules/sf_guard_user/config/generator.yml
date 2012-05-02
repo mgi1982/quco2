@@ -1,0 +1,39 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           sfGuardUser
+    theme:                 admin15
+    non_verbose_templates: true
+    with_show:             false
+    singular:              sfGuardUser
+    plural:                sfGuardUsers
+    route_prefix:          sf_guard_user
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        created_at:     { label: 'Creado el' }
+        last_login:     { label: 'Ultimo Ingreso' }
+        is_active:      { label: 'Esta activo?' }
+        is_super_admin: { label: 'Es Admin?' }
+      list:    
+        title:          'Listado de Usuarios del Sistema'
+        display:
+          - username
+          - created_at
+          - last_login
+          - is_active
+          - is_super_admin
+      filter:  
+        display:
+          - username
+      form:    
+        actions:
+          _list:        { label: 'Volver al listado' }
+          _save:
+      edit:    
+        title:          'Editar Usuario %%username%%'
+      new:     
+        title:          'Crear Nuevo Usuario'

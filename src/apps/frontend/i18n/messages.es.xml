@@ -140,6 +140,18 @@
                 <source>sign in</source>
                 <target>Iniciar Sesión</target>
             </trans-unit>
+            <trans-unit id="35">
+                <source>Metrics CRUD</source>
+                <target>Administración de Métricas</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>Users CRUD</source>
+                <target>Administración de Usuarios</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>Criterias CRUD</source>
+                <target>Administración de Criterios de Evaluación</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

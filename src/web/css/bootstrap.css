@@ -544,6 +544,10 @@ li {
   line-height: 18px;
 }
 
+ul.dropdown-menu li {
+  list-style: none;
+}
+
 ul.unstyled,
 ol.unstyled {
   margin-left: 0;
