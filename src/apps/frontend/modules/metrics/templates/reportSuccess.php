@@ -1,4 +1,5 @@
 <?php use_helper('I18N'); ?>
+Report!
 <div class="row-fluid">
 	<div class="span6">
 		<?php if(isset($form)): ?>

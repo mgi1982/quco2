@@ -20,7 +20,13 @@
 					<?php endif ?>
 				<?php endforeach ?>
 				<div class="form-actions">
-					<input type="submit" class="btn btn-primary" value="Guardar">
+				    <?php if(isset($prevForm)): ?>
+                    <a class="btn" href="<?php echo $prevForm ?>">Anterior</a>
+                    <?php endif ?>
+					<input type="submit" class="btn btn-primary" value="Guardar" />
+					<?php if(isset($nextForm)): ?>
+					<a class="btn" href="<?php echo $nextForm ?>">Siguiente</a>
+					<?php endif ?>
 				</div>
 			</fieldset>
 		</form>

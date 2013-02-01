@@ -43,8 +43,8 @@ class metricsActions extends sfActions
 			$this->form = new SiteForm($current);
 			if($request->getMethod() == sfRequest::POST) {
 				$this->form->bind(
-						$request->getParameter($this->form->getName()),
-						$request->getFiles($this->form->getName())
+					$request->getParameter($this->form->getName()),
+					$request->getFiles($this->form->getName())
 				);
 				if ($this->form->isValid())
 				{
@@ -69,6 +69,13 @@ class metricsActions extends sfActions
 		}
 		$this->form = new MetricDynamicForm();
 		$this->form->setMetric($this->metric);
+        $this->prevForm = MetricQuery::create()
+            ->filterById($metric_id, Criteria::LESS_THAN)
+            ->orderById(Criteria::DESC)
+            ->findOne();
+        if($this->prevForm instanceof Metric) {
+            $this->prevForm = $this->generateUrl('metric_load', array('id' => $this->prevForm->getId()), true);
+        }
 		if($request->getMethod() == sfRequest::POST) {
 			$this->form->bind(
 				$request->getParameter($this->form->getName()),
@@ -77,8 +84,20 @@ class metricsActions extends sfActions
 			if ($this->form->isValid())
 			{
 				$this->form->save();
+                $this->nextForm = MetricQuery::create()
+                    ->filterById($metric_id, Criteria::GREATER_THAN)
+                    ->findOne();
+                if($this->nextForm instanceof Metric) {
+                    $this->nextForm = $this->generateUrl('metric_load', array('id' => $this->nextForm->getId()), true);
+                } else {
+                    $this->nextForm = $this->generateUrl('report', array(), true);
+                }        
 			}
 		}
-	}
+    }
 	
+    public function executeReport(sfWebRequest $request)
+    {
+        
+    }
 }

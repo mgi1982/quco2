@@ -40,6 +40,10 @@ sf_guard_password:
   url:   /request_password
   param: { module: sfGuardAuth, action: password }
   
+report:
+  url:   /metrics/report
+  param: { module: metrics, action: report }
+
 metric_load:
   url:   /metrics/:id
   param: { module: metrics, action: load, id: null }
