@@ -98,6 +98,12 @@ class metricsActions extends sfActions
 	
     public function executeReport(sfWebRequest $request)
     {
-        
+        $vcAcumulado = 0;
+        foreach(SitePeer::getCurrent()->getEvaluations() as $evaluation) {
+            if(is_numeric($evaluation->getValue())) {
+                $vcAcumulado += (int) $evaluation->getValue();   
+            }
+        }
+        $this->nivelObtenido = $vcAcumulado / count($evaluation);
     }
 }

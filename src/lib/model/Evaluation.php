@@ -18,5 +18,13 @@
  * @package    propel.generator.lib.model
  */
 class Evaluation extends BaseEvaluation {
-
+    public function getProcessedValue() {
+        $formField = json_decode($this->getEcriteria()->getFormField());
+        if(isset($formField->values)) {
+            $ret = $formField->values->{$this->getValue()};
+        } else {
+            $ret = $this->getValue();
+        }
+        return $ret;
+    }
 } // Evaluation
